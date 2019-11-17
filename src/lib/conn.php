@@ -5,7 +5,7 @@ $mysql_conf = array(
     'host'=>'localhost:3306',
     'db_user'=>'root',   
     'db_pwd'=>'',
-    'db'=>'h5_1908'
+    'db'=>'h5_1910'
 );
 
 $mysqli = @new mysqli($mysql_conf['host'],$mysql_conf['db_user'],$mysql_conf['db_pwd']);

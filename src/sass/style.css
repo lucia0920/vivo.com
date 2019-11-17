@@ -1,0 +1,146 @@
+.top02 {
+  height: 68px;
+  width: 100%;
+}
+
+.top02 .top02_center {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo {
+  display: inline-block;
+  width: 106px;
+  height: 68px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.logo i {
+  display: block;
+  width: 106px;
+  height: 28px;
+  padding: 16px 0 23px;
+  font-size: 30px;
+  color: #000000;
+}
+
+.logo i:hover {
+  color: #415fff;
+}
+
+.nav {
+  width: 950px;
+  position: absolute;
+  left: 120px;
+  top: 0;
+}
+
+.nav > ul {
+  width: 1000px;
+  overflow: hidden;
+  height: 68px;
+}
+
+.nav > ul > li {
+  width: auto;
+  padding: 0 22px;
+  float: left;
+  line-height: 68px;
+  text-align: center;
+}
+
+.nav > ul > li > a {
+  height: 42px;
+  font-size: 18px;
+  color: #000000;
+}
+
+.nav > ul > li > a:hover {
+  color: #415fff;
+}
+
+.nav > ul > li > a:hover:after {
+  left: 1%;
+  right: 1%;
+  opacity: 1;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  -ms-transition: all .5s;
+  transition: all .5s;
+}
+
+.nav .sub {
+  display: none;
+  width: 100%;
+  height: 300px;
+  padding: 0;
+  position: fixed;
+  top: 100px;
+  overflow: hidden;
+  text-align: center;
+  z-index: 110;
+  left: 0px;
+  background-color: #f5f5f5;
+}
+
+.nav .sub .nav_xiao {
+  width: 1200px;
+  height: 400px;
+  overflow: hidden;
+  padding-top: 5px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.nav .sub .nav_xiao .xiao_three {
+  width: 790px;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.nav .sub .nav_xiao .xiao_three > ul {
+  width: 790px;
+}
+
+.nav .sub .nav_xiao .xiao_three > ul > li {
+  float: left;
+  display: inline-block;
+  width: 140px;
+  height: 400px;
+  overflow: hidden;
+  margin-right: 50px;
+  text-align: center;
+  line-height: 400px;
+  margin-left: 0px;
+}
+
+.nav .sub .nav_xiao .xiao_three > ul > li > a {
+  color: #686868;
+  width: 136px;
+  display: inline-block;
+  font-size: 14px;
+  height: 320px;
+}
+
+.nav .sub .nav_xiao .xiao_three > ul > li > a > img {
+  width: 90px;
+  height: 200px;
+  display: inline-block;
+}
+
+.fangdajing {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 68px;
+  height: 68px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.fangdajing i {
+  line-height: 68px;
+}

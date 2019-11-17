@@ -13,6 +13,7 @@ include('./conn.php');
         echo '<script>alert("用户名已存在");</script>';
         echo '<script>location.href="../html/reg.html";</script>';
         $mysqli->close();
+        echo(1);
         die; //如果用户名存在 代码不再往下执行
     }
 
