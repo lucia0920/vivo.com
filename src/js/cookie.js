@@ -1,15 +1,14 @@
-(function() {
-    const cookie = {
+define([], function() {
+    return {
         get: function(key) {
             if (document.cookie) { //判断是否有cookie
-                var arr = document.cookie.split('; '); //拆分cookie
-                for (var i = 0; i < arr.length; i++) {
-                    var item = arr[i].split('='); //将key和value进行拆分
-                    if (item[0] === key) { //如果 key === 用户传入的key  则返回对应的value
-                        return item[1];
-                    }
+                let arr = document.cookie.split('; '); //拆分cookie
+                for (let i = 0; i < arr.length; i++) {
+                    let item = arr[i].split('='); //拆分cookie，获得key和value
+                    // 遍历寻找key 返回值
+                    if (item[0] === key) return item[1];
                 }
-                return ''; //遍历结束没有找到  则返回空字符串
+                return ''; //如果遍历结束 都没有找到  返回空字符串
             }
         },
         set: function(key, value, day) {
@@ -22,8 +21,7 @@
             }
         },
         remove: function(key) {
-            this.set(key, "", -1);
+            this.set(key, '', -1);
         }
-    }
-    window.cookie = cookie;
-})();
+    };
+})

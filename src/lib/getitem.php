@@ -3,7 +3,7 @@
 
     $id = $_REQUEST['id'];
 
-    $sql = "select * from product where id='$id'";
+    $sql = "select * from product where u_id='$id'";
 
     $res = $mysqli->query($sql);
 

@@ -95,6 +95,138 @@ li {
             }
         }
     }
+    .top02 {
+        height: 68px;
+        width: 100%;
+        .top02_center {
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            .logo {
+                display: inline-block;
+                width: 106px;
+                height: 68px;
+                text-align: center;
+                vertical-align: center;
+                i {
+                    display: block;
+                    width: 106px;
+                    height: 28px;
+                    padding: 16px 0 23px;
+                    font-size: 30px;
+                    color: #000000;
+                    &:hover {
+                        color: #415fff;
+                    }
+                }
+            }
+            .head-btm-nav {
+                margin: auto;
+                font-size: 0;
+                position: absolute;
+                left: 12%;
+                top: 0px;
+                >li {
+                    list-style: none;
+                    display: inline-block;
+                    padding: 0 22px;
+                    height: 68px;
+                    &:nth-child(1) {
+                        padding-left: 0;
+                    }
+                    &:nth-last-child(1) {
+                        padding-right: 0;
+                    }
+                    &:hover .head-second-nav {
+                        height: 300px;
+                    }
+                    a {
+                        display: block;
+                        font-size: 18px;
+                        line-height: 68px;
+                        color: black;
+                        &:hover {
+                            color: #456fff;
+                        }
+                    }
+                    .head-second-nav {
+                        background-color: rgb(247, 247, 247);
+                        position: absolute;
+                        font-size: 0;
+                        width: 1536px;
+                        left: -312px;
+                        text-align: center;
+                        transition: height 0.3s;
+                        height: 0;
+                        z-index: 1000;
+                        overflow: hidden;
+                        li {
+                            display: inline-block;
+                            font-size: 16px;
+                            width: 68px;
+                            height: 160px;
+                            margin: 30px 70px;
+                            position: relative;
+                            &:hover {
+                                a {
+                                    img {
+                                        &:nth-child(1) {
+                                            left: -30px;
+                                        }
+                                        &:nth-child(3) {
+                                            right: -40px
+                                        }
+                                    }
+                                }
+                            }
+                            a {
+                                display: inline-block;
+                                position: absolute;
+                                width: 68px;
+                                height: 160px;
+                                top: 0;
+                                left: 0;
+                                img {
+                                    width: 68px;
+                                    height: 160px;
+                                    position: absolute;
+                                    &:nth-child(1) {
+                                        left: -10px;
+                                        transition: left 1s;
+                                    }
+                                    &:nth-child(2) {
+                                        left: 0;
+                                    }
+                                    &:nth-child(3) {
+                                        right: -10px;
+                                        transition: right 1s;
+                                    }
+                                }
+                            }
+                            span {
+                                position: absolute;
+                                top: 180px;
+                                font-size: 14px;
+                                right: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+            .fangdajing {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 68px;
+                height: 68px;
+                font-size: 20px;
+                cursor: pointer;
+                i {
+                    line-height: 68px;
+                }
+            }
+        }
+    }
 }
 
 .banner {
