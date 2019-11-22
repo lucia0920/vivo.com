@@ -9,9 +9,11 @@
     $res = $mysqli->query($sql);
 
     if($res->num_rows>0){
-        echo "<script>alert('登陆成功');location.href='../html/home.html';</script>";
+        echo 1;
+        // echo "<script>alert('登陆成功');location.href='../html/home.html';</script>";
     }else{
-        echo "<script>alert('用户名或密码不正确');location.href='../html/login.html';</script>";
+        echo 2;
+        // echo "<script>alert('用户名或密码不正确');location.href='../html/login.html';</script>";
     }
 
     $mysqli->close();

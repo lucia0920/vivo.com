@@ -7,58 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>账号注册</title>
     <link rel="stylesheet" href="../sass/reg.css">
-    <script src="../js/jquery.min.js"></script>
-    <!-- <script src="../js/reg.js"></script> -->
-    <script src="../../node_modules/requirejs/require.js" data-main="../js/main.reg"></script>
-    <script>
-        //正则
-        window.onload = function() {
-            var phone = $('#phone')[0];
-            var submit = $('#submit')[0];
-            var p_reg = $('.p_reg')[0];
-            var password = $('#password')[0];
-            var pass = $('.pass')[0];
-            var checkbox = $('#checkbox')[0];
-            var form = $('#form')[0];
-
-            var reg1 = /^1[356789]\d{9}$/; //手机号
-            var reg2 = /^.{8,16}$/; //密码
-
-            phone.onkeyup = function() {
-                if (reg1.test(this.value)) {
-                    p_reg.innerHTML = null;
-                    this.dataset.pass = true;
-                } else {
-                    p_reg.innerHTML = '请输入有效的手机号';
-                }
-                check();
-            }
-            password.onkeyup = function() {
-                if (reg2.test(this.value)) {
-                    pass.innerHTML = null;
-                    this.dataset.pass = true;
-                } else {
-                    pass.innerHTML = '密码必须包含字母和数字';
-                }
-                check();
-            }
-            checkbox.onclick = function() {
-                if (checked = true) {
-                    checkbox.dataset.pass = true;
-                }
-                check()
-            }
-
-            function check() {
-                var button = $('.form input[data-pass="true"]');
-                // console.log(button)
-                if (button.length == 3) {
-                    console.log(button)
-                    submit.removeAttribute('disabled');
-                }
-            }
-        }
-    </script>
+    <!-- <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.md5.js"></script> -->
+    <script src="../js/require.js" data-main="../js/main.reg"></script>
 </head>
 
 <body>
@@ -67,7 +18,7 @@
             <a href="home.html"><img src="../images/logo.1f42884.png.webp" alt=""></a>
         </div>
         <div class="title">账号注册</div>
-        <form action="../lib/reg.php" method="POST" class="form">
+        <div class="form">
             <div class="phone-box">
                 <span class="dropbtn">+86<img src="../images/arrow-down.42027c9.png" alt="" class="arrow-down"></span>
                 <input type="text" name="phone" id="phone" placeholder="请输入手机号">
@@ -84,9 +35,9 @@
                 <input type="checkbox" name="checkbox" id="checkbox"> 我已阅读并接受《vivo服务协议》
             </div>
             <div class="submit">
-                <input id="submit" type="submit" value="完成" disabled="disabled" />
+                <input id="submit" type="button" value="完成" disabled="disabled" />
             </div>
-        </form>
+        </div>
 
     </div>
     <div class="footer">
@@ -101,5 +52,69 @@
         </div>
     </div>
 </body>
+<!-- <script>
+    window.onload = function() {
+        var phone = $('#phone')[0];
+        var submit = $('#submit')[0];
+        var p_reg = $('.p_reg')[0];
+        var password = $('#password')[0];
+        var pass = $('.pass')[0];
+        var checkbox = $('#checkbox')[0];
+        var form = $('.form')[0];
+
+        var reg1 = /^1[356789]\d{9}$/; //手机号
+        var reg2 = /^\w{8,16}$/; //密码
+
+        phone.onkeyup = function() {
+            if (reg1.test(this.value)) {
+                p_reg.innerHTML = null;
+                this.dataset.pass = true;
+            } else {
+                p_reg.innerHTML = '请输入有效的手机号';
+            }
+            check();
+        }
+        password.onkeyup = function() {
+            if (reg2.test(this.value)) {
+                pass.innerHTML = null;
+                this.dataset.pass = true;
+            } else {
+                pass.innerHTML = '密码必须为8-16位字母和数字组合';
+            }
+            check();
+        }
+        checkbox.onclick = function() {
+            if (checked = true) {
+                checkbox.dataset.pass = true;
+            }
+            check()
+        }
+
+        function check() {
+            var button = $('.form input[data-pass="true"]');
+            // console.log(button)
+            if (button.length == 3) {
+                // console.log(button)
+                submit.removeAttribute('disabled');
+            }
+        }
+        $('#submit').on('click', function() {
+            var phone = $.md5($('#phone').val());
+            var pass = $.md5($('#userPassword').val());
+            $.ajax({
+                type: "POST",
+                url: "../lib/reg.php",
+                data: {
+                    'phone': phone,
+                    'password': pass
+                },
+                success: function(response) {
+                    console.log(data)
+                    eval(response);
+                }
+            });
+        })
+    }
+</script> -->
 
 </html>

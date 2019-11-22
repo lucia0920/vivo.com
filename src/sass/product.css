@@ -470,6 +470,10 @@ li {
   font-style: normal;
 }
 
+.selection .content .right-box .support i.iconfont {
+  color: #f10313;
+}
+
 .selection .content .right-box .support span {
   margin-left: 25px;
   cursor: pointer;
@@ -658,6 +662,10 @@ li {
 
 .selection .content .right-box .action .buy:hover {
   background-color: #f51314;
+}
+
+.selection .content .right-box .action .buy .buynow {
+  color: #fff !important;
 }
 
 .footer .footer-1 {

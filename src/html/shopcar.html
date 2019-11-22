@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../sass/shopcar.css">
     <link rel="stylesheet" href="../html/font_yje6a5bjbx/iconfont.css">
     <script type="text/javascript" src="../js/jquery.SuperSlide.2.1.1.js"></script>
-    <script src="../js/require.js" data-main="../js/main.index.js"></script>
+    <script src="../js/require.js" data-main="../js/main.shopcar"></script>
 </head>
 
 <body>
@@ -324,13 +324,13 @@
         </script>
     </div>
     <!-- 商品内容-->
-    <div class="content ">
+    <div class="content">
         <div class="car-title ">我的购物车
-            <a class="buy-more " href="../html/index.html ">继续购买<span>&gt;</span></a>
+            <a class="buy-more " href="./home.js ">继续购买<span>&gt;</span></a>
         </div>
-        <div class="tab-head clear hide ">
+        <div class="tab-head clear">
             <div>
-                <i class="checkbox"></i> 全选
+                <input type="checkbox" class="selectall"> 全选
             </div>
             <div>商品名称</div>
             <div>单价(元)</div>
@@ -341,42 +341,12 @@
             <div>操作</div>
         </div>
         <!-- 购物车列表 -->
-        <ul class="car-list hide ">
-            <li class="tab-head ">
-                <div>
-                    <input type="checkbox ">
-                    <img src="../images/gssw-icon-x2_fe90277.png " alt=" ">
-                </div>
-                <div>
-                    <a href="javascript:; ">iQOO 6GB+128GB 电光蓝</a><br>
-                    <p>颜色：电光蓝</p>
-                </div>
-                <div class="pic ">2498.00</div>
-                <div class="count ">
-                    <span class="reduce ">-</span>
-                    <input type="text " value="1 " max="5 ">
-                    <span class="add ">+</span>
-                </div>
-                <div>-<span>200</span></div>
-                <div>2298</div>
-                <div>2298.00</div>
-                <div>删除</div>
-            </li>
+        <ul class="car-list">
+
         </ul>
-        <div class="buy hide ">
-            <p>已选商品<span>0</span>件，合计（不含运费）：<b>￥</b><i>0.00</i></p>
+        <div class="buy">
+            <p>已选商品<span class="itemnum">0</span>件，合计（不含运费）：<b>￥</b><i class="price">0.00</i></p>
             <div class="to-buy ">去结算</div>
-        </div>
-        <div class="no-result">
-            <div class="car-pic">
-                <img src="../img/car-pic.png" alt="">
-            </div>
-            <p>哎呀，购物车为空!</p>
-            <div class="no-result-btn">
-                <a href="../html/index.html">
-                    <div class="go-shop">去商城逛逛</div>
-                </a>
-            </div>
         </div>
     </div>
     <!-- 商场尾部 -->

@@ -1,11 +1,11 @@
 let baseUrl = "http://localhost:8080/H5-1908section2/exercise/vivo/src";
 
 define(['jquery', 'cookie'], function($, cookie) {
-    var cookie = this.cookie
+    // var cookie = this.cookie
     return {
         render: function(callback) {
             let id = location.search.split('=')[1];
-            console.log(id)
+            // console.log(id)
             $.ajax({
                 url: `../lib/getitem.php`,
                 type: 'get',
@@ -48,17 +48,17 @@ define(['jquery', 'cookie'], function($, cookie) {
                     <div class="support">
                         <i>商品支持&nbsp;:</i>
                         <span>
-                            <i class="iconfont">&#xe657;</i>花呗分期
+                            <i class="iconfont">&#xe62c;</i>花呗分期
                             <div>
                                 <h3>
-                                    <i class="iconfont">&#xe657;</i>支持花呗分期
+                                    <i class="iconfont">&#xe62c;</i>支持花呗分期
                                 </h3>商品支持花呗分期
                             </div>
                         </span>
-                        <span><i class="iconfont">&#xe657;</i>以旧换新
+                        <span><i class="iconfont">&#xe62c;</i>以旧换新
                             <div class="encourage">
                                 <h3>
-                                    <i class="iconfont">&#xe657;</i>可以使用换新鼓励金
+                                    <i class="iconfont">&#xe62c;</i>可以使用换新鼓励金
                                 </h3>换新鼓励金通过参加以旧换新回收旧手机以后获得，旧手机享受额外补贴
                             </div>
                         </span>
@@ -66,17 +66,44 @@ define(['jquery', 'cookie'], function($, cookie) {
                     <div class="num-title">数量</div>
                     <div class="count">
                         <span class="reduce">-</span>
-                        <input type="text" value="1" max="5" class="number">
+                        <input type="text" value="1" class="number">
                         <span class="add">+</span>
                     </div>
                     <div class="action clear">
                         <div class="shop-car">加入购物车</div>
-                        <div class="buy">立即购买</div>
+                        <div class="buy"><a href="./shopcar.html" class="buynow">立即购买</a></div>
                     </div>
                 </div>
                     `;
                     $('.content').append(tempstr);
                     callback && callback(res.u_id, res.price);
+                    // console.log($('.left-box'))
+
+
+                    //选项卡功能
+                    var url1 = $('.img-list>li:first-of-type>img')[0].src
+                    $('.img-box>img')[0].src = url1
+                    $('.img-list>li').on('mouseover', function(ev) {
+                        var url = ev.target.src
+                        $('.img-box>img')[0].src = url
+                    })
+
+                    $('.shop-car').on('click', function() {
+                        alert('加购成功！')
+                    })
+
+                    //摁键加减
+                    $('.reduce').on('click', function() {
+                        $('.number').val(Number($('.number').val()) - 1);
+                        if ($('.number').val() <= 1) {
+                            $('.number').val(1)
+                                // $('.reduce').off('click')
+                            $('.reduce').attr('style', 'cursor:not-allowed')
+                        }
+                    })
+                    $('.add').on('click', function() {
+                        $('.number').val(Number($('.number').val()) + 1)
+                    })
                 }
             })
         },
@@ -106,6 +133,6 @@ define(['jquery', 'cookie'], function($, cookie) {
                 shop.push(product); //将商品放入购物车
             }
             cookie.set('shop', JSON.stringify(shop), 1);
-        }
+        },
     }
 });
